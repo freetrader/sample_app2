@@ -1,14 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
-<head>
-  <title>SampleApp2</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+<head><title>Ruby on Rails Tutorial <%= @title%></title></head>
+<%= csrf_meta_tag %>  
 <body>
-
-<%= yield %>
-
+<h1><%= @title%></h1>
+ <%= yield%>
 </body>
 </html>
