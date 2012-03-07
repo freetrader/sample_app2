@@ -7,6 +7,7 @@ group :development do
 gem 'rspec-rails', '2.8.1'
 gem 'spork', '~> 0.9.0.rc'
 gem "autotest-rails", "~> 4.1.2"
+gem 'annotate', '2.4.0'
 end
 
 group :test do
