@@ -156,6 +156,9 @@ describe User do
           it "should return the user on email/pass match" do
            User.authenticate(@attr[:email], @attr[:password]).should == @user
           end
+          
+
+      
       
       end
         
