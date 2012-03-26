@@ -1,22 +1,23 @@
 source 'http://rubygems.org'
 
-gem "rails", "~> 3.1.0"
-gem 'sqlite3', '1.3.4'
+gem "rails", "~> 3.2.2"
+gem 'sqlite3', '1.3.5'
 #gem 'pg'
 gem 'gravatar_image_tag', '1.0.0'
-gem 'factory_girl_rails', '~> 1.7.0'
+gem "heroku", '2.22.0'
+gem "railties", '~> 3.2.2'
 
 group :development do
-gem 'rspec-rails', '2.8.1'
-gem 'spork', '~> 0.9.0.rc'
+gem 'rspec-rails', '2.9.0'
+gem 'spork', '~> 0.9.0'
 gem "autotest-rails", "~> 4.1.2"
 gem 'annotate', '~>2.4.1.beta'
 end
 
 group :test do
-gem 'rspec-rails', '2.8.1'
+gem 'rspec-rails', '2.9.0'
 gem 'webrat', '0.7.1'
-gem 'spork', '~> 0.9.0.rc'
+gem 'spork', '~> 0.9.0'
 gem "autotest-rails", "~> 4.1.2"
-
+gem 'factory_girl_rails', '~> 1.7.0'
 end
