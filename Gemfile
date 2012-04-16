@@ -16,13 +16,15 @@ gem 'sqlite3', '1.3.5'
 end
 
 group :test do
-gem 'rspec-rails', '2.9.0'
-gem 'webrat', '0.7.1'
-gem 'spork', '~> 0.9.0'
-gem "autotest-rails", "~> 4.1.2"
-gem 'factory_girl_rails', '~> 1.7.0'
-gem 'sqlite3', '1.3.5'
-
+  gem 'rspec-rails', '2.9.0'
+  gem 'webrat', '0.7.1'
+  gem 'spork', '~> 0.9.0'
+  gem "autotest-rails", "~> 4.1.2"
+  gem 'factory_girl_rails', '~> 1.7.0'
+  gem 'sqlite3', '1.3.5'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :production do
