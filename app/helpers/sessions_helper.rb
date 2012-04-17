@@ -20,11 +20,12 @@ module SessionsHelper
   end
   
 
-
-  
- 
+  def deny_access
+     redirect_to signin_path, :notice => "You should be signed-in"
+  end
   
   def signed_in?
+    #boolean returns true if user is signed in
     !current_user.nil? 
   end
   
