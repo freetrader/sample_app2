@@ -6,6 +6,7 @@ gem "rails", "~> 3.2.2"
 gem 'gravatar_image_tag', '1.0.0'
 gem "heroku", '2.22.0'
 gem "railties", '~> 3.2.2'
+gem "will_paginate", "~> 3.0.3"
 
 group :development do
 gem 'rspec-rails', '2.9.0'
@@ -13,6 +14,7 @@ gem 'spork', '~> 0.9.0'
 gem "autotest-rails", "~> 4.1.2"
 gem 'annotate', '~>2.4.1.beta'
 gem 'sqlite3', '1.3.5'
+gem 'faker'
 end
 
 group :test do

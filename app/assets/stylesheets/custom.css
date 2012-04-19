@@ -15,6 +15,12 @@ header img {
   background: #fff;
 }
 
+
+ul.users {
+margin-top: 1em; }
+
+.users li { list-style: none;
+}
 section {
   margin-top: 1em;
   font-size: 120%;
