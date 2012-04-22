@@ -43,17 +43,19 @@ describe UsersController do
          response.should redirect_to(users_path)
        end
 
-       #it "should not be able to destroy itself" do
-       #  lambda do
-       #    delete :destroy, :id => @admin
-       #  end.should_not change(User, :count)
-       #end
+       it "should not be able to destroy itself" do
+         lambda do
+           delete :destroy, :id => @admin
+         end.should_not change(User, :count)
+       end
      end
    end
   
   
   describe "GET 'index" do
     
+    
+   
     describe "for non-signed in users" do
       it "should deny access" do
         get :index
@@ -61,6 +63,16 @@ describe UsersController do
         flash[:notice].should =~ /signed-in/i
       end
     end
+  
+    describe "for non-admin users" do
+   
+       it "should show not delete button" do
+        get :index
+        response.should_not have_selector("destroy", :content => "delete")
+      end
+    end
+    
+    
   
      describe "for signed-in users" do
 
@@ -163,6 +175,8 @@ describe UsersController do
   end
   
   describe "POST 'create'" do 
+    
+    
     describe "failure" do
       before(:each) do
         @attr = { :name =>  "",

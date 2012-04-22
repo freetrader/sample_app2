@@ -4,9 +4,17 @@ class UsersController < ApplicationController
   before_filter :admin_user, :only => :destroy
   
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
-    redirect_to users_path
+    if current_user.admin
+      user = User.find(params[:id])
+      if user != current_user
+        user.destroy
+        flash[:success] = "User destroyed."
+      else
+        flash[:error] = "Suicide is immoral."
+      end
+        
+      redirect_to users_path
+    end
   end
   
   def index
@@ -26,18 +34,23 @@ class UsersController < ApplicationController
   end
   
   def create
-    
-    @user = User.new(params[:user])
  
-    if @user.save
-      sign_in @user
-      redirect_to @user, :flash => {:success=>"Welcome to the Sample App!"}
+    #if signed_in?
       
-    else
+     # flash[:error]="you already have an account"
+      #redirect_to root_path
+    #else
       
-      @title = "Sign up"
-      render 'new'
-    end
+      @user = User.new(params[:user])
+ 
+      if @user.save
+        sign_in @user
+        redirect_to @user, :flash => {:success=>"Welcome to the Sample App!"}  
+      else
+        @title = "Sign up"
+        render 'new'
+      end
+    # end
   end
   
   def edit
@@ -62,6 +75,10 @@ class UsersController < ApplicationController
   
     def authenticate
        deny_access unless signed_in?
+    end
+    
+    def signed_in_and_go_home
+       deny_access if signed_in?
     end
     
     def correct_user
