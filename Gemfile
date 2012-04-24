@@ -9,6 +9,7 @@ gem "railties", '~> 3.2.2'
 
 group :development do
 gem 'rspec-rails', '2.9.0'
+gem 'rspec-expectations', '2.9.1'
 gem 'spork', '~> 0.9.0'
 gem "autotest-rails", "~> 4.1.2"
 gem 'annotate', '~>2.4.1.beta'
@@ -17,6 +18,7 @@ end
 
 group :test do
 gem 'rspec-rails', '2.9.0'
+gem 'rspec-expectations', '2.9.1'
 gem 'webrat', '0.7.1'
 gem 'spork', '~> 0.9.0'
 gem "autotest-rails", "~> 4.1.2"
